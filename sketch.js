@@ -28,11 +28,13 @@ function draw() {
     }
 
     currentCell.visited = true;
+    currentCell.highlight();
     // randomly choosing one of the unvisited neighbours
     let nextCell = currentCell.checkNeighbours();
-    // make the chosen cell the current cell and mark it as visited
     if (nextCell) {
         nextCell.visited = true;
+        removeWalls(currentCell, nextCell);
+        // make the chosen cell the current cell and mark it as visited
         currentCell = nextCell;
     }
 }
@@ -96,8 +98,40 @@ function Cell(row, column) {
         }
 
         if (this.visited) {
+            noStroke();
             fill(0, 255, 0, 100);
             rect(x, y, cellSize, cellSize);
         }
+    }
+
+    this.highlight = function() {
+        let x = this.column * cellSize;
+        let y = this.row * cellSize;
+        noStroke();
+        fill(255, 0, 0, 100);
+        rect(x, y, cellSize, cellSize);
+    }
+    
+}
+
+function removeWalls(cell1, cell2) {
+    let x = cell1.column - cell2.column;
+    if (x === 1) {
+        cell1.walls[3] = false;
+        cell2.walls[1] = false;
+    }
+    else if (x === -1) {
+        cell1.walls[1] = false;
+        cell2.walls[3] = false;
+    }
+
+    let y = cell1.row - cell2.row;
+    if (y === 1) {
+        cell1.walls[0] = false;
+        cell2.walls[2] = false;
+    }
+    if (y === -1) {
+        cell1.walls[2] = false;
+        cell2.walls[0] = false;
     }
 }
