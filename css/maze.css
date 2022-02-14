@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #A4FFCE;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    height: 40px;
+    width: 40px;
+    border: 2px solid green;
+}
