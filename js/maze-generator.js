@@ -1,8 +1,11 @@
 let stack = [];
 let current = grid[0];
+let play = false;
+let goal = grid[nrows * ncols - 1];
 let drawLoop = setInterval(animate, 50);
+let canAnimate = true;
+let popUps = [];
 
-//Maze Generator Algorithm
 function mazeGenerator() {
 	cellElements[current.r * ncols + current.c].style.background = "olive";
 	if (!current.visited) {
@@ -45,7 +48,10 @@ function mazeGenerator() {
 		current = stack.pop();
 	} else {
 		clearInterval(drawLoop);
+		play = true;
 		cellElements[current.r * ncols + current.c].style.background = "greenyellow";
+		cellElements[goal.r * ncols + goal.c].innerHTML = walnut;
+		cellElements[current.r * ncols + current.c].innerHTML = hackee;
 	}
 }
 

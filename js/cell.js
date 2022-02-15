@@ -1,5 +1,7 @@
 const nrows = Math.floor(innerHeight / 45) - 5;
 const ncols = Math.floor(innerWidth / 45) - 1;
+const hackee = `<img src="../img/hackee.png" height="27px" width="27px"></img>`;
+const walnut = `<img src="../img/walnut.png" height="27px" width="27px"></img>`;
 
 function createCells() {
 	for (let i = 0; i < nrows; i++) {
@@ -18,6 +20,16 @@ function createCells() {
 }
 
 createCells();
+document.body.innerHTML += `
+	<div class="container">
+		<div class="direction-button top-margin"><i class="fas fa-caret-up"></i></div>
+		<div class="middle-row">
+			<div class="direction-button"><i class="fas fa-caret-left"></i></div>
+			<div class="direction-button"><i class="fas fa-caret-right"></i></div>
+		</div>
+		<div class="direction-button"><i class="fas fa-caret-down"></i></div>
+	</div>
+`;
 
 class Cell {
 	constructor(i, j) {
@@ -39,7 +51,7 @@ class Cell {
 			cellElements[this.r * ncols + this.c].style["border-left"] = "none";
 
 		if (this.visited)
-			cellElements[this.r * ncols + this.c].style.background = "greenyellow";
+			cellElements[this.r * ncols + this.c].style.background = "rgb(72,191,109)";
 	}
 	createNeighbors() {
 		if (this.r > 0) 

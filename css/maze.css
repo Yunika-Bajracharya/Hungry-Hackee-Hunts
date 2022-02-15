@@ -11,9 +11,10 @@ body {
 	justify-content: center;
 	align-items: center;
 
-    background: #a1ffce;
-	background: -webkit-linear-gradient(to right, #faffd1, #a1ffce);
-	background: linear-gradient(to right, #faffd1, #a1ffce);
+    background-image: url('../img/background.png');
+	background-size: cover; 
+	/* background: -webkit-linear-gradient(to right, #90E0EF, #00B4D8);
+	background: linear-gradient(to right, #CAF0F8, #86C6F4); */
 }
 
 .row {
@@ -25,8 +26,8 @@ body {
 .cell {
 	height: 45px;
 	width: 45px;
-	border-bottom: 4px solid darkgreen;
-	border-right: 4px solid darkgreen;
+	border-bottom: 4px solid #013236;
+	border-right: 4px solid #013236;
 
 	position: relative; /* Fixing Corner Border */
 
@@ -36,11 +37,11 @@ body {
 }
 
 .first-col {
-	border-left: 4px solid darkgreen;
+	border-left: 4px solid #013236;
 }
 
 .first-row {
-	border-top: 4px solid darkgreen;
+	border-top: 4px solid #013236;
 }
 
 .bottomRightCorner::after {
@@ -50,13 +51,17 @@ body {
 	bottom: 0;
 	width: 4px;
 	height: 4px;
-	background: darkgreen;
+	background: #013236;
+}
+
+.top-margin {
+	margin-top: 10px;
 }
 
 .navbar {
 	display: flex;
 	justify-content: center;
-	color: darkgreen;
+	color: #013236;
 	margin: 0 10px 20px 10px;
 
 	font-family: "Vollkorn", serif;
@@ -65,7 +70,7 @@ body {
 }
 
 .generate-maze {
-	border: 3px solid darkgreen;
+	border: 3px solid #013236;
 	padding: 3px 10px;
 	margin-right: 20px;
 	cursor: pointer;
@@ -73,18 +78,18 @@ body {
 
 .generate-maze:hover,
 .checkbox:hover {
-	background: rgba(173, 255, 47, 0.6);
+	background: rgb(248,253,187);
 }
 
 .visualize-maze {
-	border-top: 3px solid darkgreen;
-	border-left: 3px solid darkgreen;
-	border-bottom: 3px solid darkgreen;
+	border-top: 3px solid #013236;
+	border-left: 3px solid #013236;
+	border-bottom: 3px solid #013236;
 	padding: 3px 10px;
 }
 
 .checkbox {
-	border: 3px solid darkgreen;
+	border: 3px solid #013236;
 	padding: 3px;
 	cursor: pointer;
 	width: 45px;
@@ -95,5 +100,47 @@ body {
 }
 
 .highlight {
-	background: greenyellow;
+	background: #48BF6D;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 4px;
+}
+
+.middle-row {
+	display: flex;
+}
+
+.direction-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	width: 50px;
+	font-size: 3rem;
+	border: 3px solid black;
+	border-radius: 40%;
+	color: black;
+	cursor: pointer;
+}
+
+.middle-row .direction-button:first-of-type {
+	margin-right: 50px;
+}
+
+.heart {
+	position: absolute;
+	animation: fly 3s linear forwards;
+	color: #e7273f;
+	z-index: 1;
+}
+
+@keyframes fly {
+	to {
+		transform: translateY(-50px);
+	}
 }
