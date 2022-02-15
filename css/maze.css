@@ -5,15 +5,95 @@
 }
 
 body {
-    background-color: #A4FFCE;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+    background: #a1ffce;
+	background: -webkit-linear-gradient(to right, #faffd1, #a1ffce);
+	background: linear-gradient(to right, #faffd1, #a1ffce);
 }
 
 .row {
     display: flex;
+    justify-content: center;
+	align-items: center;
 }
 
 .cell {
-    height: 40px;
-    width: 40px;
-    border: 2px solid green;
+	height: 45px;
+	width: 45px;
+	border-bottom: 4px solid darkgreen;
+	border-right: 4px solid darkgreen;
+
+	position: relative; /* Fixing Corner Border */
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.first-col {
+	border-left: 4px solid darkgreen;
+}
+
+.first-row {
+	border-top: 4px solid darkgreen;
+}
+
+.bottomRightCorner::after {
+	position: absolute;
+	content: "";
+	right: 0;
+	bottom: 0;
+	width: 4px;
+	height: 4px;
+	background: darkgreen;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	color: darkgreen;
+	margin: 0 10px 20px 10px;
+
+	font-family: "Vollkorn", serif;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.generate-maze {
+	border: 3px solid darkgreen;
+	padding: 3px 10px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.generate-maze:hover,
+.checkbox:hover {
+	background: rgba(173, 255, 47, 0.6);
+}
+
+.visualize-maze {
+	border-top: 3px solid darkgreen;
+	border-left: 3px solid darkgreen;
+	border-bottom: 3px solid darkgreen;
+	padding: 3px 10px;
+}
+
+.checkbox {
+	border: 3px solid darkgreen;
+	padding: 3px;
+	cursor: pointer;
+	width: 45px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.highlight {
+	background: greenyellow;
 }

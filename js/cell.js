@@ -1,16 +1,17 @@
-const nrows = 20;
-const ncols = 20;
-let grid = [];
+const nrows = Math.floor(innerHeight / 45) - 5;
+const ncols = Math.floor(innerWidth / 45) - 1;
 
 function createCells() {
-	for (let y = 0; y < nrows; y++) {
+	for (let i = 0; i < nrows; i++) {
 		let row = document.createElement("div");
 		row.classList.add("row");
+		if (i === 0) row.classList.add("first-row");
 		document.body.appendChild(row);
 
-		for (let x = 0; x < ncols; x++) {
+		for (let j = 0; j < ncols; j++) {
 			let col = document.createElement("div");
 			col.classList.add("cell");
+			if (j === 0) col.classList.add("first-col");
 			row.appendChild(col);
 		}
 	}
@@ -19,40 +20,43 @@ function createCells() {
 createCells();
 
 class Cell {
-    constructor(x, y) {
-        this.row = x;
-        this.col = y;
-        this.walls = [true, true, true, true]; // top right bottoom left
-        this.visited = false;
-        this.neighbors = [];
-    }
+	constructor(i, j) {
+		this.r = i;
+		this.c = j;
 
-    index(row, column) {
-        return column + row * ncols;
-    }
+		this.neighbors = [];
+		this.walls = [true, true, true, true]; //Top Right Bottom Left
+		this.visited = false;
+	}
+	show() {
+		if (!this.walls[0])
+			cellElements[this.r * ncols + this.c].style["border-top"] = "none";
+		if (!this.walls[1])
+			cellElements[this.r * ncols + this.c].style["border-right"] = "none";
+		if (!this.walls[2])
+			cellElements[this.r * ncols + this.c].style["border-bottom"] = "none";
+		if (!this.walls[3])
+			cellElements[this.r * ncols + this.c].style["border-left"] = "none";
 
-    findNeighbors() {
-        let top    = grid[index(this.row - 1, this.col)];
-        let right  = grid[index(this.row, this.col + 1)];
-        let bottom = grid[index(this.row + 1, this.col)];
-        let left   = grid[index(this.row, this.col - 1)];
-        
-        if (this.row > 0) {
-            this.neighbours.push(top);
-        }
-        if (this.col < ncols - 1) {
-            this.neighbours.push(right);
-        }
-        if (this.row < nrows - 1) {
-            this.neighbours.push(bottom);
-        }
-        if (this.col > 0) {
-            this.neighbours.push(left);
-        }
-    }
-};
+		if (this.visited)
+			cellElements[this.r * ncols + this.c].style.background = "greenyellow";
+	}
+	createNeighbors() {
+		if (this.r > 0) 
+			this.neighbors.push(grid[(this.r - 1) * ncols + this.c]); //Top
+		if (this.c < ncols - 1)
+			this.neighbors.push(grid[this.r * ncols + (this.c + 1)]); //Right
+		if (this.r < nrows - 1)
+			this.neighbors.push(grid[(this.r + 1) * ncols + this.c]); //Bottom
+		if (this.c > 0) this.neighbors.push(grid[this.r * ncols + (this.c - 1)]); //Left
+	}
+	fix() {
+		if (!this.walls[1] && !this.walls[2])
+			cellElements[this.r * ncols + this.c].classList.add("bottomRightCorner");
+	}
+}
 
-function makeGrid() {
+function fillGrid() {
 	for (let i = 0; i < nrows; i++) {
 		for (let j = 0; j < ncols; j++) {
 			grid.push(new Cell(i, j));
@@ -60,9 +64,11 @@ function makeGrid() {
 	}
 	for (let i = 0; i < nrows; i++) {
 		for (let j = 0; j < ncols; j++) {
-			grid[i * ncols + j].findNeighbors();
+			grid[i * ncols + j].createNeighbors();
 		}
 	}
 }
 
-makeGrid();
+let cellElements = document.querySelectorAll(".cell");
+let grid = [];
+fillGrid();
