@@ -62,7 +62,7 @@ body {
 	display: flex;
 	justify-content: center;
 	color: #013236;
-	margin: 0 10px 20px 10px;
+	margin: 0 10px 10px 10px;
 
 	font-family: "Vollkorn", serif;
 	font-size: 1.2rem;
@@ -70,26 +70,34 @@ body {
 }
 
 .generate-maze {
-	border: 3px solid #013236;
 	padding: 3px 10px;
 	margin-right: 20px;
 	cursor: pointer;
+	background-color: rgb(248,253,187);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+
 }
 
 .generate-maze:hover,
 .checkbox:hover {
-	background: rgb(248,253,187);
+	border: 3px solid #013236;
+
 }
 
 .visualize-maze {
-	border-top: 3px solid #013236;
-	border-left: 3px solid #013236;
-	border-bottom: 3px solid #013236;
+	background-color: rgb(248,253,187);
+	border-top-left-radius: 20px;
 	padding: 3px 10px;
 }
 
 .checkbox {
-	border: 3px solid #013236;
+	background-color: rgb(248,253,187);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+
+
 	padding: 3px;
 	cursor: pointer;
 	width: 45px;
@@ -108,7 +116,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 4px;
+	margin-bottom: 5px;
+	/* background-color: bisque; */
 }
 
 .middle-row {
@@ -119,17 +128,17 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 50px;
-	width: 50px;
-	font-size: 3rem;
-	border: 3px solid black;
+	height: 30px;
+	width: 30px;
+	font-size: 2rem;
+	border: 2px solid #CFF7B0;
 	border-radius: 40%;
-	color: black;
+	color: #aef17b;
 	cursor: pointer;
 }
 
 .middle-row .direction-button:first-of-type {
-	margin-right: 50px;
+	margin-right: 40px;
 }
 
 .heart {

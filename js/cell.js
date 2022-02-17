@@ -1,4 +1,4 @@
-const nrows = Math.floor(innerHeight / 45) - 5;
+const nrows = Math.floor(innerHeight / 45) - 3;
 const ncols = Math.floor(innerWidth / 45) - 1;
 const hackee = `<img src="../img/hackee.png" height="27px" width="27px"></img>`;
 const walnut = `<img src="../img/walnut.png" height="27px" width="27px"></img>`;
