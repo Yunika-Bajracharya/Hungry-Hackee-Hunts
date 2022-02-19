@@ -128,7 +128,7 @@ function displayNext(){
 	nextButton.classList.add("next");
 	nextButton.innerHTML="Next";
 	nextButton.addEventListener("mousedown",function(){
-		window.open("next.html");
+		window.open("sorting.html");
 	})
 	document.body.appendChild(nextButton);
 		
