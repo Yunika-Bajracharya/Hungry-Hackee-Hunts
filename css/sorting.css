@@ -41,9 +41,38 @@ body {
 
 }
 
+.container {
+    background-color: rgba(243,252,187, 0.5);
+    position: relative;
+    height: 70vh;
+    margin: 20px;
+}
+
 .character {
     width: 50px;
     height: 50px;
     position: absolute;
     bottom: 0;
+    left: 40px;
+}
+
+.block {
+    width: 48px;
+    background-color: #48BF6D;
+    position: absolute;
+    left: 90px;
+
+    border: 2px solid #035F50;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0px;
+    transition: 0.2s all ease;
+}
+
+.block_id {
+    position: absolute;
+    color: black;
+    margin-top: -20px;
+    width: 100%;
+    text-align: center;
 }
