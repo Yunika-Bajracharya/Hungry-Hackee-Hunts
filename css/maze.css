@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +15,6 @@ body {
 
     background-image: url('../img/background.png');
 	background-size: cover; 
-	/* background: -webkit-linear-gradient(to right, #90E0EF, #00B4D8);
-	background: linear-gradient(to right, #CAF0F8, #86C6F4); */
 }
 
 .row {
@@ -64,9 +64,8 @@ body {
 	color: #013236;
 	margin: 0 10px 10px 10px;
 
-	font-family: "Vollkorn", serif;
+	font-family: 'Frank Ruhl Libre', serif;
 	font-size: 1.2rem;
-	font-weight: bold;
 }
 
 .generate-maze {
@@ -117,7 +116,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 5px;
-	/* background-color: bisque; */
 }
 
 .middle-row {
