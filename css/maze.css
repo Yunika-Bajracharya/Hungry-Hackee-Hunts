@@ -91,6 +91,22 @@ body {
 	padding: 3px 10px;
 }
 
+.next {
+	background-color: rgb(248,253,187);
+	/* border-top-left-radius: 20px; */
+	padding: 3px 10px;
+	display: flex;
+	justify-content: center;
+	color: #013236;
+	margin: 0 10px 10px 10px;
+	position: absolute;
+	left:0px;
+	right:0px;
+	font-family: "Vollkorn", serif;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
 .checkbox {
 	background-color: rgb(248,253,187);
 	border-top-right-radius: 20px;

@@ -79,6 +79,7 @@ function checkWin() {
 		console.log("WON");
 		play = false;
 		victoryMessage();
+		displayNext();
 	}
 }
 function upArrowPressed() {
@@ -120,4 +121,15 @@ function victoryMessage() {
 			}, 2000);
 		}, i * 100);
 	}
+}
+
+function displayNext(){
+	let nextButton=document.createElement("div");
+	nextButton.classList.add("next");
+	nextButton.innerHTML="Next";
+	nextButton.addEventListener("mousedown",function(){
+		window.open("sorting.html");
+	})
+	document.body.appendChild(nextButton);
+		
 }
