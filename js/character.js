@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let bottom = 20; 
  
     function jump() {
-        if (bottom > 510) return;  
+        if (bottom > 400) return;  
             bottom += 25;
             right += 50; 
             hackee.style.bottom = bottom + 'px';
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // assign functions to keycodes
     function control(e) {
-        if (e.keyCode === 32) { // space bar
+        if (e.keyCode === 38) { // space bar
             jump();
         }
     }

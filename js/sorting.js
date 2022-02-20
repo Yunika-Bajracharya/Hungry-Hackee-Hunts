@@ -1,7 +1,7 @@
 var container = document.getElementById("array");
 
 let array = [];
-for (let i = 255; i <= 5100; i = i + 255) {
+for (let i = 255; i <= 3825; i = i + 255) {
   array.push(i);
 }
 
@@ -25,7 +25,7 @@ function shuffle(array) {
 function generatearray() {
   var newArray = shuffle(array);
   console.log(newArray);
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 15; i++) {
 
     var value = newArray[i];
 
@@ -49,7 +49,7 @@ function generatearray() {
 var count_container = 
 document.getElementById("count");
 function generate_idx() {
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 15; i++) {
     var array_ele2 = document.createElement("div");
     array_ele2.classList.add("block2");
     array_ele2.style.height = `${20}px`;
@@ -127,7 +127,7 @@ async function partition(l, r, delay = 100) {
     }, delay * 3)
   );
   document.getElementsByClassName("range")[0].innerText = "";
-  for (var k = 0; k < 20; k++) 
+  for (var k = 0; k < 15; k++) 
   blocks[k].style.backgroundColor = "#6b5b95";
   return i;
 }
