@@ -45,7 +45,8 @@ body {
     background-color: rgba(243,252,187, 0.5);
     position: relative;
     height: 70vh;
-    margin: 20px;
+    margin: 20px auto;
+    width: 90%;
 }
 
 .character {
@@ -53,19 +54,19 @@ body {
     height: 50px;
     position: absolute;
     bottom: 0;
-    left: 40px;
+    /* left: 40px; */
 }
 
 .block {
     width: 48px;
     background-color: #48BF6D;
     position: absolute;
-    left: 90px;
+    left: 50px;
 
     border: 2px solid #035F50;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0px;
+    bottom: 20px;
     transition: 0.2s all ease;
 }
 
@@ -75,4 +76,30 @@ body {
     margin-top: -20px;
     width: 100%;
     text-align: center;
+}
+
+.block2 {
+    width: 48px;
+    background-color: darkgray;
+    position: absolute;
+    transition: 0.2s all ease;
+    bottom: 0;
+    left: 50px;
+    border-right: 2px solid #035F50;
+    border-left: 2px solid #035F50;
+    border-bottom: 2px solid #035F50; 
+}
+
+.block_id3 {
+    position: absolute;
+    color: black;
+    margin-top: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+#count {
+    height: 20px;
+    width: 598px;
+    margin: auto;
 }

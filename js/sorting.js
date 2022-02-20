@@ -22,7 +22,26 @@ function generateArray() {
   }
 }
 
+// to generate indexes
+var countContainer = document.getElementById("count");
+function generateId() {
+  for (let i = 0; i < 20; i++) {
+    var arrayElement2 = document.createElement("div");
+    arrayElement2.classList.add("block2");
+    arrayElement2.style.height = `${20}px`;
+    arrayElement2.style.transform = `translate(${i * 50}px)`;
+
+    // adding index
+    var arrayElementLabel2 = document.createElement("label");
+    arrayElementLabel2.classList.add("block_id3");
+    arrayElementLabel2.innerText = i;
+
+    arrayElement2.appendChild(arrayElementLabel2);
+    countContainer.appendChild(arrayElement2);
+  }
+}
 generateArray();
+generateId();
 
 ////////////////////////////////////////
 
