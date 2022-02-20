@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hackee = document.querySelector('.character');
     let right = 0;
-    let bottom = 0;
-
+    let bottom = 20; 
+ 
     function jump() {
-        if (bottom > 350) return;  
+        if (bottom > 510) return;  
             bottom += 25;
             right += 50; 
             hackee.style.bottom = bottom + 'px';

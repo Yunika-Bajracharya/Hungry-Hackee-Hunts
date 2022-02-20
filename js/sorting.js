@@ -1,12 +1,37 @@
 var container = document.getElementById("array");
 
+let array = [];
+for (let i = 255; i <= 5100; i = i + 255) {
+  array.push(i);
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
+
 function generatearray() {
+  var newArray = shuffle(array);
+  console.log(newArray);
   for (var i = 0; i < 20; i++) {
-    var value = Math.ceil(Math.random() * 100);
+
+    var value = newArray[i];
 
     var array_ele = document.createElement("div");
     array_ele.classList.add("block");
-    array_ele.style.height = `${value * 3}px`;
+    array_ele.style.height = `${value * 0.1}px`;
     array_ele.style.transform = `translate(${i * 50}px)`;
   
     // Creating label element for displaying size of particular block
@@ -118,9 +143,3 @@ async function QuickSort(l, r, delay = 100) {
     await QuickSort(pivot_idx + 1, r);
   }
 }
-
-generatearray();
-
-generate_idx();
-
-QuickSort(0, 19);
