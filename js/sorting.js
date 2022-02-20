@@ -1,96 +1,126 @@
 var container = document.getElementById("array");
 
-// to generate array of blocks
-function generateArray() {
+function generatearray() {
   for (var i = 0; i < 20; i++) {
     var value = Math.ceil(Math.random() * 100);
 
-    var arrayElement = document.createElement("div");
-    arrayElement.classList.add("block");
-
-    arrayElement.style.height = `${value * 3}px`;
-    arrayElement.style.transform = `translate(${i * 50}px)`;
-    
-    // Creating label element for displaying
-    // size of particular block
-    var arrayElementLabel = document.createElement("label");
-    arrayElementLabel.classList.add("block_id");
-    arrayElementLabel.innerText = value;
-    
-    arrayElement.appendChild(arrayElementLabel);
-    container.appendChild(arrayElement);
+    var array_ele = document.createElement("div");
+    array_ele.classList.add("block");
+    array_ele.style.height = `${value * 3}px`;
+    array_ele.style.transform = `translate(${i * 50}px)`;
+  
+    // Creating label element for displaying size of particular block
+    var array_ele_label = 
+    document.createElement("label");
+    array_ele_label.classList.add("block_id");
+    array_ele_label.innerText = value;
+  
+    array_ele.appendChild(array_ele_label);
+    container.appendChild(array_ele);
   }
 }
-
+  
 // to generate indexes
-var countContainer = document.getElementById("count");
-function generateId() {
-  for (let i = 0; i < 20; i++) {
-    var arrayElement2 = document.createElement("div");
-    arrayElement2.classList.add("block2");
-    arrayElement2.style.height = `${20}px`;
-    arrayElement2.style.transform = `translate(${i * 50}px)`;
+var count_container = 
+document.getElementById("count");
+function generate_idx() {
+  for (var i = 0; i < 20; i++) {
+    var array_ele2 = document.createElement("div");
+    array_ele2.classList.add("block2");
+    array_ele2.style.height = `${20}px`;
+    array_ele2.style.transform = `translate(${i * 50}px)`;
+  
+    // Adding indexes
+    var array_ele_label2 = 
+    document.createElement("label");
+    array_ele_label2.classList.add("block_id3");
+    array_ele_label2.innerText = i;
 
-    // adding index
-    var arrayElementLabel2 = document.createElement("label");
-    arrayElementLabel2.classList.add("block_id3");
-    arrayElementLabel2.innerText = i;
-
-    arrayElement2.appendChild(arrayElementLabel2);
-    countContainer.appendChild(arrayElement2);
+    array_ele2.appendChild(array_ele_label2);
+    count_container.appendChild(array_ele2);
   }
 }
-generateArray();
-generateId();
+  
+async function partition(l, r, delay = 100) {
+  var blocks = document.querySelectorAll(".block");
+  
+  // Storing the value of pivot element
+  var pivot = Number(blocks[r].childNodes[0].innerHTML);
+  var i = l - 1;
+  blocks[r].style.backgroundColor = "red";
+  document.
+  getElementsByClassName("range")[0].innerText = `[${l},${r}]`;
+  
+  for (var j = l; j <= r - 1; j++) {
+    // To change color of blocks to be compared
+    blocks[j].style.backgroundColor = "yellow";
+    // To wait for 700 milliseconds
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, delay)
+    );
+    var value = 
+    Number(blocks[j].childNodes[0].innerHTML);
+  
+    // To compare value of two blocks
+    if (value < pivot) {
+      i++;
+      var temp1 = blocks[i].style.height;
+      var temp2 = blocks[i].childNodes[0].innerText;
+      blocks[i].style.height = blocks[j].style.height;
+      blocks[j].style.height = temp1;
+      blocks[i].childNodes[0].innerText =
+      blocks[j].childNodes[0].innerText;
+      blocks[j].childNodes[0].innerText = temp2;
+      blocks[i].style.backgroundColor = "orange";
+      if (i != j) blocks[j].style.backgroundColor = "pink";
+      //To wait for 700 milliseconds
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, delay)
+      );
+    } else blocks[j].style.backgroundColor = "pink";
+  }
+  // Swapping the ith with pivot element
+  i++;
+  var temp1 = blocks[i].style.height;
+  var temp2 = blocks[i].childNodes[0].innerText;
+  blocks[i].style.height = blocks[r].style.height;
+  blocks[r].style.height = temp1;
+  blocks[i].childNodes[0].innerText =
+  blocks[r].childNodes[0].innerText;
+  blocks[r].childNodes[0].innerText = temp2;
+  blocks[r].style.backgroundColor = "pink";
+  blocks[i].style.backgroundColor = "green";
+  
+  // To wait for 2100 milliseconds
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, delay * 3)
+  );
+  document.getElementsByClassName("range")[0].innerText = "";
+  for (var k = 0; k < 20; k++) 
+  blocks[k].style.backgroundColor = "#6b5b95";
+  return i;
+}
+  
+// Asynchronous QuickSort function
+async function QuickSort(l, r, delay = 100) {
+  if (l < r) {
+    // Storing the index of pivot element after partition
+    var pivot_idx = await partition(l, r);
+    // Recursively calling quicksort for left partition
+    await QuickSort(l, pivot_idx - 1);
+    // Recursively calling quicksort for right partition
+    await QuickSort(pivot_idx + 1, r);
+  }
+}
 
-////////////////////////////////////////
+generatearray();
 
-// low -> starting index
-// high -> ending index
+generate_idx();
 
-// function swap(arr, i, j) {
-//   let temp = arr[i];
-//   arr[i] = arr[j];
-//   arr[j] = temp;
-// }
-
-// function partition (arr, low, high) {
-
-//   let pivot = arr[high];
-//   let i = (low - 1);
-
-//   for (let j = low; j <= high - 1; j++) {
-//     if (arr[j] <= pivot) {
-//       i++;
-//       swap(arr, i, j);
-//     }
-//   }
-//   swap(arr, i+1, high);
-//   return (i+1);
-// }
-
-
-// function quickSort (arr, low, high) {
-//   if (low < high) {
-
-//     // p is partitioning index, arr[p]
-//     // is now at right place
-//     p = partition(arr, low, high);
-
-//     // Separately sort elements before
-//     // partition and after partition
-//     quickSort(arr, low, p - 1); // before partition
-//     quickSort(arr, p + 1, high); // after partition
-//   }
-// }
-
-// function printArray(arr, size) {
-//   for (let i = 0; i < size; i++)
-//       console.log(arr[i] + " ");
-// }
-
-// let arr = [5, 3, 7, 6, 2, 9];
-// let n = arr.length;
-// quickSort(arr, 0, n-1);
-// console.log("sorted array\n");
-// printArray(arr, n);
+QuickSort(0, 19);
