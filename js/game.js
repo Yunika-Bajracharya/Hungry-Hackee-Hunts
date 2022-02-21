@@ -125,11 +125,11 @@ function victoryMessage() {
 
 function displayNext(){
 	let nextButton=document.createElement("div");
-	nextButton.classList.add("next");
-	nextButton.innerHTML="Next";
+	nextButton.classList.add("generate-maze");
+	nextButton.innerHTML="Level 2";
 	nextButton.addEventListener("mousedown",function(){
 		window.open("sorting.html");
 	})
-	document.body.appendChild(nextButton);
-		
+	let navbar = document.querySelector(".navbar");
+	navbar.appendChild(nextButton);		
 }
