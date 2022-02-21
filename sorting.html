@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
+    crossorigin="anonymous"
+  />
     <link rel="stylesheet" href="css/sorting.css">
     <title>Sorting Visualizer</title>
 </head>
 <body>
     <div class="navbar">
-        <button class="nav-item" id="generate-array" onclick="generatearray(), generate_idx();">Generate New Array</button>
+        <div class="title">Hungry Hackee Hunts</div>
+        <button class="nav-item"><a href="maze.html" style="text-decoration: none; color: black;">Back to Level 1</a></button> 
+        <!-- <button class="nav-item" id="generate-array" onclick="generatearray(), generate_idx();">Generate New Array</button> -->
         <button class="nav-item" onclick="QuickSort(0, 14)">Quick Sort</button> 
+        <div class="nav-info"><i class="fas fa-lightbulb" style="color: rgb(241, 172, 44);"></i> Help Hackee to get the Walnuts</div>
     </div>
 
     <div class="container">

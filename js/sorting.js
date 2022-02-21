@@ -143,3 +143,6 @@ async function QuickSort(l, r, delay = 100) {
     await QuickSort(pivot_idx + 1, r);
   }
 }
+
+generatearray();
+generate_idx();
