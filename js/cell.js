@@ -1,7 +1,7 @@
 const nrows = Math.floor(innerHeight / 45) - 3;
 const ncols = Math.floor(innerWidth / 45) - 1;
-const hackee = `<img src="../img/hackee.png" height="27px" width="27px"></img>`;
-const walnut = `<img src="../img/sorting-hat.png" height="27px" width="27px"></img>`;
+const hackee = `<img src="../img/hackee.png" height="30" width="30px"></img>`;
+const sortingHat = `<img src="../img/sorting-hat.png" height="30px" width="30px"></img>`;
 
 function createCells() {
 	for (let i = 0; i < nrows; i++) {
@@ -60,7 +60,8 @@ class Cell {
 			this.neighbors.push(grid[this.r * ncols + (this.c + 1)]); //Right
 		if (this.r < nrows - 1)
 			this.neighbors.push(grid[(this.r + 1) * ncols + this.c]); //Bottom
-		if (this.c > 0) this.neighbors.push(grid[this.r * ncols + (this.c - 1)]); //Left
+		if (this.c > 0) 
+			this.neighbors.push(grid[this.r * ncols + (this.c - 1)]); //Left
 	}
 	fix() {
 		if (!this.walls[1] && !this.walls[2])

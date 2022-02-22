@@ -24,7 +24,6 @@ function shuffle(array) {
 
 function generatearray() {
   var newArray = shuffle(array);
-  console.log(newArray);
   for (var i = 0; i < 15; i++) {
 
     var value = newArray[i];
@@ -44,7 +43,7 @@ function generatearray() {
     container.appendChild(array_ele);
   }
 }
-  
+
 // to generate indexes
 var count_container = 
 document.getElementById("count");

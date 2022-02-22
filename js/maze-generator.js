@@ -49,8 +49,8 @@ function mazeGenerator() {
 	} else {
 		clearInterval(drawLoop);
 		play = true;
-		cellElements[current.r * ncols + current.c].style.background = "greenyellow";
-		cellElements[goal.r * ncols + goal.c].innerHTML = walnut;
+		cellElements[current.r * ncols + current.c].style.background = "#48BF6D";
+		cellElements[goal.r * ncols + goal.c].innerHTML = sortingHat;
 		cellElements[current.r * ncols + current.c].innerHTML = hackee;
 	}
 }
