@@ -17,9 +17,17 @@
     <div class="navbar">
         <div class="title">Hungry Hackee Hunts</div>
         <button class="nav-item"><a href="maze.html" style="text-decoration: none; color: black;">Back to Level 1</a></button> 
-        <!-- <button class="nav-item" id="generate-array" onclick="generatearray(), generate_idx();">Generate New Array</button> -->
+        <button class="nav-item" id="generate-array" onclick="generate(), generate_idx();">Generate New Array</button>
         <button class="nav-item" onclick="QuickSort(0, 14)">Quick Sort</button> 
-        <div class="nav-info"><i class="fas fa-lightbulb" style="color: rgb(241, 172, 44);"></i> Help Hackee to get the Walnuts</div>
+        <button class="nav-item" onclick="SelectionSort(0,14)">Selection Sort</button>
+        <button class="nav-item" onclick="BubbleSort(0,14)">Bubble Sort</button>
+        <!-- <button onclick="myFunction()" class="dropbtn">Sort Type</button>
+        <div id="myDropdown" class="dropdown-content">
+            <button class="dropdown-content"  onclick="QuickSort(0, 14)">Quick Sort</button>
+            <a href="">Bubble Sort</a>
+            <a href="">Selection Sort</a>
+        </div> -->
+        <div class="nav-info"><i class="fas fa-lightbulb" style="color: rgb(241, 172, 44);"></i> Help Hackee to get the Walnuts</div>  
     </div>
 
     <div class="container">
@@ -39,4 +47,7 @@
 </body>
 <script src="js/sorting.js"></script>
 <script src="js/character.js"></script>
+<script src="js/quicksort.js"></script>
+<script src="js/selectionsort.js"></script>
+<script src="js/bubblesort.js"></script>
 </html>
