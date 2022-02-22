@@ -1,174 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    background-image: url('../img/background.png');
-	background-size: cover; 
+  background-image: url("../img/background.png");
+  background-size: cover;
 }
 
 .row {
-    display: flex;
-    justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cell {
-	height: 45px;
-	width: 45px;
-	border-bottom: 4px solid #013236;
-	border-right: 4px solid #013236;
+  height: 45px;
+  width: 45px;
+  border-bottom: 4px solid #013236;
+  border-right: 4px solid #013236;
 
-	position: relative; /* Fixing Corner Border */
+  position: relative; /* Fixing Corner Border */
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .first-col {
-	border-left: 4px solid #013236;
+  border-left: 4px solid #013236;
 }
 
 .first-row {
-	border-top: 4px solid #013236;
+  border-top: 4px solid #013236;
 }
 
 .bottomRightCorner::after {
-	position: absolute;
-	content: "";
-	right: 0;
-	bottom: 0;
-	width: 4px;
-	height: 4px;
-	background: #013236;
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background: #013236;
 }
 
 .top-margin {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 .navbar {
-	display: flex;
-	justify-content: center;
-	color: #013236;
-	margin: 0 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  color: #013236;
+  margin: 0 10px 10px 10px;
 
-	font-family: 'Frank Ruhl Libre', serif;
-	font-size: 1rem;
-	font-weight: 500;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .title {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    color: #035F50;
-    font-family: 'Chewy', cursive;
-    font-size: larger;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: #035f50;
+  font-family: "Chewy", cursive;
+  font-size: larger;
 }
 
-
 .generate-maze {
-	padding: 3px 10px;
-	margin-right: 20px;
-	margin-left: 20px;
-	cursor: pointer;
-	background-color: rgb(248,253,187);
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+  padding: 3px 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  background-color: rgb(248, 253, 187);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .info {
-	padding: 3px 10px;
-	margin-left: 20px;
-	background-color: rgb(248,253,187);
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+  padding: 3px 10px;
+  margin-left: 20px;
+  background-color: rgb(248, 253, 187);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .generate-maze:hover,
 .checkbox:hover {
-	border: 3px solid #013236;
-
+  border: 3px solid #013236;
 }
 
 .visualize-maze {
-	background-color: rgb(248,253,187);
-	border-top-left-radius: 20px;
-	padding: 3px 10px;
+  background-color: rgb(248, 253, 187);
+  border-top-left-radius: 20px;
+  padding: 3px 10px;
 }
 
 .checkbox {
-	background-color: rgb(248,253,187);
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+  background-color: rgb(248, 253, 187);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 
+  padding: 3px;
+  cursor: pointer;
+  width: 45px;
 
-	padding: 3px;
-	cursor: pointer;
-	width: 45px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .highlight {
-	background: #48BF6D;
+  background: #48bf6d;
 }
 
 .container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 .middle-row {
-	display: flex;
+  display: flex;
 }
 
 .direction-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 30px;
-	width: 30px;
-	font-size: 2rem;
-	border: 2px solid #CFF7B0;
-	border-radius: 40%;
-	color: #aef17b;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  font-size: 2rem;
+  border: 2px solid #cff7b0;
+  border-radius: 40%;
+  color: #aef17b;
+  cursor: pointer;
 }
 
 .middle-row .direction-button:first-of-type {
-	margin-right: 40px;
+  margin-right: 40px;
 }
 
 .heart {
-	position: absolute;
-	animation: fly 3s linear forwards;
-	color: #e7273f;
-	z-index: 1;
+  position: absolute;
+  animation: fly 3s linear forwards;
+  color: #e7273f;
+  z-index: 1;
 }
 
 @keyframes fly {
-	to {
-		transform: translateY(-50px);
-	}
+  to {
+    transform: translateY(-50px);
+  }
 }

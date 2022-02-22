@@ -51,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // assign functions to keycodes
     function control(e) {
         if (e.keyCode === 38) { // up arrow
-            jump();
+            if (sorted === true) {
+                jump();
+            }
         }
     }
 

@@ -1,3 +1,5 @@
+let sorted = false;
+
 //for drop down
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -16,10 +18,6 @@ window.onclick = function(event) {
     }
   }
 }
-
-
-
-
 
 var container = document.getElementById("array");
 
@@ -91,7 +89,7 @@ function generate_idx() {
 
 generatearray();
 generate_idx();
-function generate()
-{
+
+function generate() {
   window.location.reload();
- }
+}
