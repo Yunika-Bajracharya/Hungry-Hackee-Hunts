@@ -65,6 +65,37 @@ body {
   border: 3px solid #013236;
 }
 
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(248, 253, 187);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: -2px;
+  top: 37px;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dropdown-content a:hover {background-color: #B7F7A3;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
 .container {
   background-color: rgba(243, 252, 187, 0.5);
   position: relative;
