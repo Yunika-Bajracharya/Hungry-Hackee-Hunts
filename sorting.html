@@ -16,8 +16,9 @@
   <body>
     <div class="navbar">
       <h1 class="title">
-        <a href="maze.html" style="text-decoration: none; color: #035f50;"
-          >Hungry Hackee Hunts</a>
+        <a href="maze.html" style="text-decoration: none; color: #035f50"
+          >Hungry Hackee Hunts</a
+        >
       </h1>
       <!-- <button class="nav-item"><a href="maze.html" style="text-decoration: none; color: black;">Back to Level 1</a></button>  -->
       <button
@@ -27,14 +28,16 @@
       >
         Generate New Array
       </button>
-      
-      <div class="nav-item dropdown"> Sort
+
+      <div class="nav-item dropdown">
+        Sort
         <div class="dropdown-content">
           <a id="quickSortButton">Quick Sort</a>
           <a id="selectionSortButton">Selection Sort</a>
           <a id="bubbleSortButton">Bubble Sort</a>
           <a id="insertionSortButton">Insertion Sort</a>
           <a id="shellSortButton">Shell Sort</a>
+          <a id="heapSortButton">Heap Sort</a>
         </div>
       </div>
 
@@ -45,6 +48,11 @@
     </div>
 
     <div class="container">
+      <span class="nav-item info dropdown"
+        ><i class="fas fa-arrow-up" style="color: rgb(241, 172, 44)"></i> Press
+        arrow-up key to make Hackee jump
+        <span class="nav-info dropdown-content"><i class="fas fa-lightbulb" style="color: rgb(241, 172, 44)"></i> The blocks must be sorted first!</span>
+      </span>
       <div id="array"></div>
       <div id="count"></div>
       <br />
@@ -64,5 +72,6 @@
   <script src="js/selectionsort.js"></script>
   <script src="js/insertionSort.js"></script>
   <script src="js/shellSort.js"></script>
+  <script src="js/heapSort.js"></script>
   <script src="js/character.js"></script>
 </html>
