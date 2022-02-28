@@ -63,8 +63,7 @@ body {
   display: flex;
   justify-content: center;
   color: #013236;
-  margin: 0 10px 10px 10px;
-
+  margin: -29px 10px 20px 10px;
   font-family: "Frank Ruhl Libre", serif;
   font-size: 1rem;
   font-weight: 500;
@@ -72,8 +71,8 @@ body {
 
 .title {
   position: absolute;
-  left: 20px;
-  top: 10px;
+  left: 15px;
+  top: 20px;
   color: #035f50;
   font-family: "Chewy", cursive;
   font-size: larger;
@@ -81,7 +80,7 @@ body {
 }
 
 .generate-maze {
-  padding: 3px 10px;
+  padding: 7px 10px;
   margin-right: 20px;
   margin-left: 20px;
   cursor: pointer;
@@ -91,71 +90,27 @@ body {
   border-bottom-right-radius: 20px;
 }
 
-.info {
-  padding: 3px 10px;
-  margin-left: 20px;
-  background-color: rgb(248, 253, 187);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 .generate-maze:hover,
 .checkbox:hover {
-  border: 3px solid #013236;
+  border: 1px solid #013236;
 }
 
 .visualize-maze {
   background-color: rgb(248, 253, 187);
   border-top-left-radius: 20px;
-  padding: 3px 10px;
+  padding: 7px 10px;
 }
 
 .checkbox {
   background-color: rgb(248, 253, 187);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-
   padding: 3px;
   cursor: pointer;
   width: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.highlight {
-  background: #48bf6d;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
-}
-
-.middle-row {
-  display: flex;
-}
-
-.direction-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  width: 30px;
-  font-size: 2rem;
-  border: 2px solid #cff7b0;
-  border-radius: 40%;
-  color: #aef17b;
-  cursor: pointer;
-}
-
-.middle-row .direction-button:first-of-type {
-  margin-right: 40px;
 }
 
 .heart {
@@ -169,4 +124,28 @@ body {
   to {
     transform: translateY(-50px);
   }
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(248, 253, 187);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: -2px;
+  top: 36px;
+  padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

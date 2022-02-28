@@ -22,12 +22,10 @@ function createCells() {
 createCells();
 document.body.innerHTML += `
 	<div class="container">
-		<div class="direction-button top-margin"><i class="fas fa-caret-up"></i></div>
-		<div class="middle-row">
-			<div class="direction-button"><i class="fas fa-caret-left"></i></div>
-			<div class="direction-button"><i class="fas fa-caret-right"></i></div>
-		</div>
-		<div class="direction-button"><i class="fas fa-caret-down"></i></div>
+		<div class="direction-button top-margin"></div>
+    <div class="direction-button"></div>
+    <div class="direction-button"></div>
+		<div class="direction-button"></div>
 	</div>
 `;
 

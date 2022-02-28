@@ -9,10 +9,6 @@
 
 body {
   height: 100vh;
-  /* display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
   background-image: url("../img/background.png");
   background-size: cover;
 }
@@ -24,8 +20,8 @@ body {
 
 .title {
   position: absolute;
-  left: 20px;
-  top: 15px;
+  left: 15px;
+  top: 20px;
   color: #035f50;
   font-family: "Chewy", cursive;
   font-size: larger;
@@ -34,7 +30,7 @@ body {
 
 .nav-item {
   padding: 7px 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 20px;
   cursor: pointer;
   background-color: rgb(248, 253, 187);
@@ -49,7 +45,7 @@ body {
 
 .nav-info {
   padding: 7px 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 20px;
   background-color: rgb(248, 253, 187);
   border-top-left-radius: 20px;
@@ -62,7 +58,7 @@ body {
 }
 
 .nav-item:hover {
-  border: 3px solid #013236;
+  border: 1px solid #013236;
 }
 
 .dropdown {
@@ -77,7 +73,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   min-width: 130px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   left: -2px;
   top: 37px;
@@ -91,50 +87,54 @@ body {
   border-bottom-right-radius: 20px;
 }
 
-.dropdown-content a:hover {background-color: #B7F7A3;}
+.dropdown-content a:hover {
+  background-color: #b7f7a3;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .info {
   display: inline-block;
   position: absolute;
-  top: -10px;
+  top: -20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
 
+.info:hover {
+  border: none;
+}
+
 .container {
-  background-color: rgba(243, 252, 187, 0.5);
+  background-color: rgba(243, 252, 187, 0.3);
   position: relative;
   height: 85vh;
-  margin: 20px auto;
   width: 90%;
+  margin: 20px auto;
 }
 
 .character {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   position: absolute;
   bottom: 0px;
-  /* left: 40px; */
 }
 
 .tree {
   position: absolute;
   left: 780px;
-  bottom: 0;
+  bottom: -15px;
 }
 
 .block {
   width: 48px;
-  background-color: #6b5b95;
+  background-color: rgb(61, 163, 93);
   position: absolute;
-  left: 50px;
-
-  border: 2px solid #035f50;
-  margin-left: auto;
-  margin-right: auto;
+  left: 60px;
+  border: 1px solid black;
   bottom: 20px;
   transition: 0.2s all ease;
 }
@@ -149,19 +149,19 @@ body {
 
 .block2 {
   width: 48px;
-  background-color: darkgray;
+  background-color: #684821;
   position: absolute;
   transition: 0.2s all ease;
   bottom: 0;
-  left: 50px;
-  border-right: 2px solid #035f50;
-  border-left: 2px solid #035f50;
-  border-bottom: 2px solid #035f50;
+  left: 60px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .block_id3 {
   position: absolute;
-  color: black;
+  color: rgb(238, 229, 229);
   margin-top: 1px;
   width: 100%;
   text-align: center;
