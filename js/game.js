@@ -36,20 +36,6 @@ checkbox.addEventListener("click", function () {
 
 let directionButtons = document.querySelectorAll(".direction-button");
 
-for (let k = 0; k < directionButtons.length; k++) {
-  directionButtons[k].addEventListener("mousedown", function () {
-    if (play) {
-      cellElements[current.r * ncols + current.c].innerHTML = ``;
-      if (k == 0) upArrowPressed();
-      if (k == 1) leftArrowPressed();
-      if (k == 2) rightArrowPressed();
-      if (k == 3) downArrowPressed();
-      cellElements[current.r * ncols + current.c].innerHTML = hackee;
-      checkWin();
-    }
-  });
-}
-
 document.body.addEventListener("keydown", function (event) {
   if (play) {
     cellElements[current.r * ncols + current.c].innerHTML = ``;
@@ -59,18 +45,6 @@ document.body.addEventListener("keydown", function (event) {
     if (event.key === "ArrowDown") downArrowPressed();
     cellElements[current.r * ncols + current.c].innerHTML = hackee;
     checkWin();
-  }
-});
-
-document.body.addEventListener("keyup", function (event) {
-  for (let k = 0; k < directionButtons.length; k++) {
-    directionButtons[k].classList.remove("highlight");
-  }
-});
-
-document.body.addEventListener("mouseup", function (event) {
-  for (let k = 0; k < directionButtons.length; k++) {
-    directionButtons[k].classList.remove("highlight");
   }
 });
 
