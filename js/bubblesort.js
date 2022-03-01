@@ -1,10 +1,8 @@
-// Asynchronous BubbleSort function
 async function BubbleSort(l, r, delay = 100) {
   var blocks = document.querySelectorAll(".block");
 
   document.getElementsByClassName("range")[0].innerText = `[${l},${r}]`;
 
-  // BubbleSort Algorithm
   for (var i = 0; i < 15; i++) {
     for (var j = 0; j < 15 - i - 1; j++) {
       // To change background-color of the
@@ -30,17 +28,15 @@ async function BubbleSort(l, r, delay = 100) {
       }
 
       // Changing the color to the previous one
-      blocks[j].style.backgroundColor = "#6b5b95";
-      blocks[j + 1].style.backgroundColor = "#6b5b95";
+      blocks[j].style.backgroundColor = "rgb(61,163,93)";
+      blocks[j + 1].style.backgroundColor = "rgb(61,163,93)";
     }
 
     //changing the color of greatest element
-    //found in the above traversal
-    blocks[blocks.length - i - 1].style.backgroundColor = "#13CE66";
+    blocks[blocks.length - i - 1].style.backgroundColor = "green";
   }
 }
 
-// Function to swap two blocks
 function swap(el1, el2) {
   return new Promise((resolve) => {
     // For exchanging styles of two blocks
@@ -49,7 +45,7 @@ function swap(el1, el2) {
     el2.style.transform = temp;
 
     window.requestAnimationFrame(function () {
-      // For waiting for .25 sec
+      // waiting for .25 sec
       setTimeout(() => {
         container.insertBefore(el2, el1);
         resolve();

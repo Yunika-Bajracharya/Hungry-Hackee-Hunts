@@ -1,7 +1,5 @@
-// Asynchronous function to perform "Insertion Sort"
 async function InsertionSort(delay = 100) {
   let bars = document.querySelectorAll(".block");
-  // Provide lightgreen colour to 0th bar
   bars[0].style.backgroundColor = " yellow";
 
   document.getElementsByClassName("range")[0].innerText = `[${0},${14}]`;
