@@ -2,7 +2,10 @@
 async function InsertionSort(delay = 100) {
   let bars = document.querySelectorAll(".block");
   // Provide lightgreen colour to 0th bar
-  bars[0].style.backgroundColor = " rgb(49, 226, 13)";
+  bars[0].style.backgroundColor = " yellow";
+
+  document.getElementsByClassName("range")[0].innerText = `[${0},${14}]`;
+
   for (var i = 1; i < bars.length; i += 1) {
     // Assign i-1 to j
     var j = i - 1;
@@ -13,14 +16,9 @@ async function InsertionSort(delay = 100) {
     // To store the ith bar height to height
     var height = bars[i].style.height;
 
-    // For selecting section having id "ele"
-    var barval = document.getElementById("ele");
 
-    // For dynamically Updating the selected element
-    // barval.innerHTML = `<h3>Element Selected is :${key}</h3>`;
-
-    //Provide darkblue color to the ith bar
-    bars[i].style.backgroundColor = "darkblue";
+    //Provide  color to the ith bar
+    bars[i].style.backgroundColor = "red";
 
     // To pause the execution of code for 100 milliseconds
     await new Promise((resolve) =>
@@ -31,15 +29,16 @@ async function InsertionSort(delay = 100) {
 
     // For placing selected element at its correct position
     while (j >= 0 && parseInt(bars[j].childNodes[0].innerHTML) > key) {
-      // Provide darkblue color to the jth bar
-      bars[j].style.backgroundColor = "darkblue";
+      // Provide color to the jth bar
+      bars[j].style.backgroundColor = "red";
 
       // For placing jth element over (j+1)th element
+      document.getElementsByClassName("range")[0].innerText = `[${j+1},${j}]`;
       bars[j + 1].style.height = bars[j].style.height;
       bars[j + 1].childNodes[0].innerText = bars[j].childNodes[0].innerText;
 
       // Assign j-1 to j
-      j = j - 1;
+      j = j -1;
 
       // To pause the execution of code for 600 milliseconds
       await new Promise((resolve) =>
@@ -50,7 +49,7 @@ async function InsertionSort(delay = 100) {
 
       // Provide lightgreen color to the sorted part
       for (var k = i; k >= 0; k--) {
-        bars[k].style.backgroundColor = " rgb(49, 226, 13)";
+        bars[k].style.backgroundColor = " yellow";
       }
     }
 
@@ -65,8 +64,8 @@ async function InsertionSort(delay = 100) {
       }, 600)
     );
 
-    // Provide light green color to the ith bar
-    bars[i].style.backgroundColor = " rgb(49, 226, 13)";
+    // Provide color to the ith bar
+    bars[i].style.backgroundColor = " #6b5b95";
   }
 }
 
