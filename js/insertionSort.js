@@ -63,7 +63,10 @@ async function InsertionSort(delay = 100) {
     );
 
     // Provide color to the ith bar
-    bars[i].style.backgroundColor = " #6b5b95";
+    //bars[i].style.backgroundColor = " #6b5b95";
+  }
+  for (var x = 0; x < 15; x++) {
+    bars[x].style.backgroundColor = "#6b5b95";
   }
 }
 
