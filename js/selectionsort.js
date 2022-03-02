@@ -3,7 +3,7 @@ async function SelectionSort(l, r, delay = 100) {
   // Assign 0 to max_idx
   var max_idx = l;
   document.getElementsByClassName("range")[0].innerText = `[${l},${r}]`;
-  for (var i = 14; i > 0 ; i --) {
+  for (var i = 14; i > 0 ; i--) {
     // Assign i to max_idx
     max_idx = i;
 
@@ -64,9 +64,9 @@ async function SelectionSort(l, r, delay = 100) {
     blocks[max_idx].style.backgroundColor = "pink";
 
     // Provide color to the ith bar
-    blocks[i].style.backgroundColor = " #6b5b95";
+    blocks[i].style.backgroundColor = "green";
   }
-  blocks[i].style.backgroundColor = " #6b5b95";
+  blocks[i].style.backgroundColor = "green";
 }
 
 let selectionSortButton = document.getElementById("selectionSortButton");

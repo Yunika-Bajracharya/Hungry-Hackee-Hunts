@@ -1,4 +1,4 @@
-async function partition(l, r, delay = 100) {
+async function partition(l, r, delay = 600) {
   var blocks = document.querySelectorAll(".block");
 
   // Storing the value of pivot element
@@ -8,9 +8,9 @@ async function partition(l, r, delay = 100) {
   document.getElementsByClassName("range")[0].innerText = `[${l},${r}]`;
 
   for (var j = l; j <= r - 1; j++) {
-    // To change color of blocks to be compared
+    // change color of blocks to be compared
     blocks[j].style.backgroundColor = "yellow";
-    // To wait for 700 milliseconds
+    // wait for 600 milliseconds
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
@@ -18,7 +18,7 @@ async function partition(l, r, delay = 100) {
     );
     var value = Number(blocks[j].childNodes[0].innerHTML);
 
-    // To compare value of two blocks
+    // compare value of two blocks
     if (value < pivot) {
       i++;
       var temp1 = blocks[i].style.height;
@@ -29,7 +29,7 @@ async function partition(l, r, delay = 100) {
       blocks[j].childNodes[0].innerText = temp2;
       blocks[i].style.backgroundColor = "orange";
       if (i != j) blocks[j].style.backgroundColor = "pink";
-      //To wait for 700 milliseconds
+      // wait for 600 milliseconds
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
@@ -46,7 +46,7 @@ async function partition(l, r, delay = 100) {
   blocks[i].childNodes[0].innerText = blocks[r].childNodes[0].innerText;
   blocks[r].childNodes[0].innerText = temp2;
   blocks[r].style.backgroundColor = "pink";
-  blocks[i].style.backgroundColor = "green";
+  blocks[i].style.backgroundColor = "#6b5b95";
 
   // To wait for 2100 milliseconds
   await new Promise((resolve) =>
@@ -55,7 +55,7 @@ async function partition(l, r, delay = 100) {
     }, delay * 3)
   );
   document.getElementsByClassName("range")[0].innerText = "";
-  for (var k = 0; k < 15; k++) blocks[k].style.backgroundColor = "#6b5b95";
+  for (var k = 0; k < 15; k++) blocks[k].style.backgroundColor = "green";
   return i;
 }
 

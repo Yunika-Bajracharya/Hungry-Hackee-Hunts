@@ -55,10 +55,10 @@ async function ShellSort(delay = 600) {
         }, 600)
       );
 
-      // Provide skyblue color to the jth bar
+      // Provide color to the jth bar
       bars[j].style.backgroundColor = "pink";
 
-      // Provide skyblue color to the kth bar
+      // Provide color to the kth bar
       bars[k].style.backgroundColor = "pink";
 
       // To pause the execution of code for
@@ -71,7 +71,7 @@ async function ShellSort(delay = 600) {
     }
   }
   for (var x = 0; x < 15; x++) {
-    bars[x].style.backgroundColor = "#6b5b95";
+    bars[x].style.backgroundColor = "green";
   }
 }
 
