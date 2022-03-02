@@ -5,7 +5,7 @@ Help Hackee in her walnut heist while visualizing maze generator and different s
 ## [Demo](https://www.yunikabajracharya.com.np/Hungry-Hackee-Hunts/)
 
 ## Game Idea
-Hackee, a ground squirrel, wants to get the walnuts from a tree but cannot jump till there. There is a set of bars before the tree but they aren’t sorted so, she would first need to find a way to sort the bars.
+**Hackee**, a ground squirrel, wants to get the walnuts from a tree but cannot jump till there. There is a set of bars before the tree but they aren’t sorted so, she would first need to find a way to sort the bars.
 
 There are two levels.
 
