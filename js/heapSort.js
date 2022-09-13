@@ -75,7 +75,9 @@ async function HeapSort(n) {
 let heapSortButton = document.getElementById("heapSortButton");
 heapSortButton.addEventListener("mousedown", () => {
   let promise = HeapSort(15);
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });

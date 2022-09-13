@@ -23,7 +23,9 @@ async function BubbleSort(l, r, delay = 100) {
       // To compare value of two blocks
       if (value1 > value2) {
         await swap(blocks[j], blocks[j + 1]);
-        document.getElementsByClassName("range")[0].innerText = `[${j},${j+1}]`;
+        document.getElementsByClassName("range")[0].innerText = `[${j},${
+          j + 1
+        }]`;
         blocks = document.querySelectorAll(".block");
       }
 
@@ -57,7 +59,9 @@ function swap(el1, el2) {
 let bubbleSortButton = document.getElementById("bubbleSortButton");
 bubbleSortButton.addEventListener("mousedown", () => {
   let promise = BubbleSort(0, 14);
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });

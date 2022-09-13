@@ -71,7 +71,9 @@ async function InsertionSort(delay = 100) {
 let insertionSortButton = document.getElementById("insertionSortButton");
 insertionSortButton.addEventListener("mousedown", () => {
   let promise = InsertionSort();
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });

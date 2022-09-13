@@ -78,7 +78,9 @@ async function ShellSort(delay = 600) {
 let shellSortButton = document.getElementById("shellSortButton");
 shellSortButton.addEventListener("mousedown", () => {
   let promise = ShellSort();
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });

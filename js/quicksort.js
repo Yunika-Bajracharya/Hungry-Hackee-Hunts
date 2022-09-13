@@ -74,7 +74,9 @@ async function QuickSort(l, r, delay = 100) {
 let quickSortButton = document.getElementById("quickSortButton");
 quickSortButton.addEventListener("mousedown", () => {
   let promise = QuickSort(0, 14);
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });

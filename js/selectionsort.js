@@ -72,7 +72,9 @@ async function SelectionSort(l, r, delay = 100) {
 let selectionSortButton = document.getElementById("selectionSortButton");
 selectionSortButton.addEventListener("mousedown", () => {
   let promise = SelectionSort(0, 14);
+  disableButtons();
   promise.then(function () {
     sorted = true;
+    enableButtons();
   });
 });
