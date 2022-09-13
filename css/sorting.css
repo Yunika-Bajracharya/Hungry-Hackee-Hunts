@@ -77,6 +77,11 @@ body {
   z-index: 1;
   left: -2px;
   top: 37px;
+  line-height: 22px;
+}
+
+.hint {
+  min-width: 330px;
 }
 
 .dropdown-content button {
