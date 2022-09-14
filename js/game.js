@@ -100,6 +100,7 @@ function victoryMessage() {
 function displayNext() {
   let nextButton = document.createElement("div");
   nextButton.classList.add("generate-maze");
+  nextButton.style.marginLeft = "-3px";
   nextButton.innerHTML = "Level 2";
   nextButton.addEventListener("mousedown", function () {
     window.open("sorting.html");
