@@ -1,4 +1,4 @@
-async function ShellSort(delay = 600) {
+async function ShellSort(delay) {
   let bars = document.querySelectorAll(".block");
 
   document.getElementsByClassName("range")[0].innerText = `[${0},${14}]`;
@@ -9,7 +9,7 @@ async function ShellSort(delay = 600) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 300)
+      }, delay)
     );
 
     for (var j = i; j < 15; j++) {
@@ -35,7 +35,7 @@ async function ShellSort(delay = 600) {
         await new Promise((resolve) =>
           setTimeout(() => {
             resolve();
-          }, 300)
+          }, delay)
         );
       }
 
@@ -52,7 +52,7 @@ async function ShellSort(delay = 600) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 600)
+        }, delay)
       );
 
       // Provide color to the jth bar
@@ -66,7 +66,7 @@ async function ShellSort(delay = 600) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 300)
+        }, delay)
       );
     }
   }
@@ -77,7 +77,7 @@ async function ShellSort(delay = 600) {
 
 let shellSortButton = document.getElementById("shellSortButton");
 shellSortButton.addEventListener("mousedown", () => {
-  let promise = ShellSort();
+  let promise = ShellSort(delay);
   disableButtons();
   promise.then(function () {
     sorted = true;

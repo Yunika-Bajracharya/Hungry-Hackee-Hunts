@@ -1,4 +1,4 @@
-async function InsertionSort(delay = 100) {
+async function InsertionSort(delay) {
   let bars = document.querySelectorAll(".block");
   bars[0].style.backgroundColor = " yellow";
 
@@ -21,7 +21,7 @@ async function InsertionSort(delay = 100) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 600)
+      }, delay)
     );
 
     // For placing selected element at its correct position
@@ -40,7 +40,7 @@ async function InsertionSort(delay = 100) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 600)
+        }, delay)
       );
 
       // Provide color to the sorted part
@@ -57,7 +57,7 @@ async function InsertionSort(delay = 100) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 600)
+      }, delay)
     );
 
     // Provide color to the ith bar
@@ -70,7 +70,7 @@ async function InsertionSort(delay = 100) {
 
 let insertionSortButton = document.getElementById("insertionSortButton");
 insertionSortButton.addEventListener("mousedown", () => {
-  let promise = InsertionSort();
+  let promise = InsertionSort(delay);
   disableButtons();
   promise.then(function () {
     sorted = true;

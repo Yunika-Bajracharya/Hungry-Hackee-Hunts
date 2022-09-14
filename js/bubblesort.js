@@ -1,4 +1,4 @@
-async function BubbleSort(l, r, delay = 100) {
+async function BubbleSort(l, r, delay) {
   var blocks = document.querySelectorAll(".block");
 
   document.getElementsByClassName("range")[0].innerText = `[${l},${r}]`;
@@ -47,18 +47,18 @@ function swap(el1, el2) {
     el2.style.transform = temp;
 
     window.requestAnimationFrame(function () {
-      // waiting for .25 sec
+      // waiting for .05 sec i.e. 50 ms
       setTimeout(() => {
         container.insertBefore(el2, el1);
         resolve();
-      }, 250);
+      }, 50);
     });
   });
 }
 
 let bubbleSortButton = document.getElementById("bubbleSortButton");
 bubbleSortButton.addEventListener("mousedown", () => {
-  let promise = BubbleSort(0, 14);
+  let promise = BubbleSort(0, 14, delay);
   disableButtons();
   promise.then(function () {
     sorted = true;

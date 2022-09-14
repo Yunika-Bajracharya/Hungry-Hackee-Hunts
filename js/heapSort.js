@@ -1,4 +1,4 @@
-async function Heapify(n, i) {
+async function Heapify(n, i, delay) {
   
   var blocks = document.querySelectorAll(".block");
   var largest = i; // Initialize largest as root
@@ -33,7 +33,7 @@ async function Heapify(n, i) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 250)
+      }, delay)
     );
 
     // Recursively Heapify the affected sub-tree
@@ -41,12 +41,12 @@ async function Heapify(n, i) {
   }
 }
 
-async function HeapSort(n) {
+async function HeapSort(n, delay) {
   var blocks = document.querySelectorAll(".block");
 
   // Build heap (rearrange array)
   for (var i = Math.floor(n / 2) - 1; i >= 0; i--) {
-    await Heapify(n, i);
+    await Heapify(n, i, delay);
   }
 
   // One by one extract an element from heap
@@ -63,7 +63,7 @@ async function HeapSort(n) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 250)
+      }, delay)
     );
 
     // Call max Heapify on the reduced heap
@@ -74,7 +74,7 @@ async function HeapSort(n) {
 
 let heapSortButton = document.getElementById("heapSortButton");
 heapSortButton.addEventListener("mousedown", () => {
-  let promise = HeapSort(15);
+  let promise = HeapSort(15, delay);
   disableButtons();
   promise.then(function () {
     sorted = true;

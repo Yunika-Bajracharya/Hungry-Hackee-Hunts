@@ -1,4 +1,4 @@
-async function SelectionSort(l, r, delay = 100) {
+async function SelectionSort(l, r, delay) {
   let blocks = document.querySelectorAll(".block");
   // Assign 0 to max_idx
   var max_idx = l;
@@ -17,7 +17,7 @@ async function SelectionSort(l, r, delay = 100) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 300)
+        }, delay)
       );
 
       // To store the integer value of jth bar to var1
@@ -41,7 +41,7 @@ async function SelectionSort(l, r, delay = 100) {
       await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 300)
+      }, delay)
     );
     }
 
@@ -57,7 +57,7 @@ async function SelectionSort(l, r, delay = 100) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 300)
+      }, delay)
     );
 
     // Provide color to the (min-idx)th bar
@@ -71,7 +71,7 @@ async function SelectionSort(l, r, delay = 100) {
 
 let selectionSortButton = document.getElementById("selectionSortButton");
 selectionSortButton.addEventListener("mousedown", () => {
-  let promise = SelectionSort(0, 14);
+  let promise = SelectionSort(0, 14, delay);
   disableButtons();
   promise.then(function () {
     sorted = true;

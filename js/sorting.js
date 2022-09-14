@@ -74,17 +74,3 @@ generate_idx();
 function generate() {
   window.location.reload();
 }
-
-const algoButtons = document.querySelectorAll(".algoButtons button");
-
-function disableButtons() {
-  for (let i = 0; i < algoButtons.length; i++) {
-    algoButtons[i].disabled = true;
-  }
-}
-
-function enableButtons() {
-  for (let i = 0; i < algoButtons.length; i++) {
-    algoButtons[i].disabled = false;
-  }
-}

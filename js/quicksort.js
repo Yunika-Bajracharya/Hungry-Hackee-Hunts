@@ -1,4 +1,4 @@
-async function partition(l, r, delay = 600) {
+async function partition(l, r, delay) {
   var blocks = document.querySelectorAll(".block");
 
   // Storing the value of pivot element
@@ -60,20 +60,20 @@ async function partition(l, r, delay = 600) {
 }
 
 // Asynchronous QuickSort function
-async function QuickSort(l, r, delay = 100) {
+async function QuickSort(l, r, delay) {
   if (l < r) {
     // Storing the index of pivot element after partition
-    var pivot_idx = await partition(l, r);
+    var pivot_idx = await partition(l, r, delay);
     // Recursively calling quicksort for left partition
-    await QuickSort(l, pivot_idx - 1);
+    await QuickSort(l, pivot_idx - 1, delay);
     // Recursively calling quicksort for right partition
-    await QuickSort(pivot_idx + 1, r);
+    await QuickSort(pivot_idx + 1, r, delay);
   }
 }
 
 let quickSortButton = document.getElementById("quickSortButton");
 quickSortButton.addEventListener("mousedown", () => {
-  let promise = QuickSort(0, 14);
+  let promise = QuickSort(0, 14, delay);
   disableButtons();
   promise.then(function () {
     sorted = true;
