@@ -1,13 +1,18 @@
 var jmp = new Howl({
-  src: "/sfx/jmp.mp3",
+  src: "./sfx/jmp.mp3",
+  html5: true,
+  volume: 0.6,
 });
 
 var eat = new Howl({
-  src: "/sfx/eat.mp3",
+  src: "./sfx/eat.mp3",
+  html5: true,
 });
 
 var tada = new Howl({
-  src: "/sfx/tada.mp3",
+  src: "./sfx/tada.mp3",
+  html5: true,
+  volume: 0.8,
 });
 
 function victoryMessage() {

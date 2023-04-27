@@ -1,13 +1,18 @@
 var moveSound = new Howl({
-  src: "/sfx/move.mp3",
+  src: ["./sfx/move.mp3"],
+  html5: true,
 });
 
 var tada = new Howl({
-  src: "/sfx/tada.mp3",
+  src: "./sfx/tada.mp3",
+  html5: true,
+  volume: 0.8,
 });
 
 var wallCrash = new Howl({
-  src: "/sfx/wall_crash.mp3",
+  src: "./sfx/wall_crash.mp3",
+  html5: true,
+  volume: 0.2,
 });
 
 let btn = document.querySelector(".generate-maze");
