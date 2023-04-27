@@ -12,7 +12,7 @@ var tada = new Howl({
 var wallCrash = new Howl({
   src: "./sfx/wall_crash.mp3",
   html5: true,
-  volume: 0.2,
+  volume: 0.1,
 });
 
 let btn = document.querySelector(".generate-maze");
