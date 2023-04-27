@@ -6,6 +6,10 @@ var tada = new Howl({
   src: "/sfx/tada.mp3",
 });
 
+var wallCrash = new Howl({
+  src: "/sfx/wall_crash.mp3",
+});
+
 let btn = document.querySelector(".generate-maze");
 btn.addEventListener("click", function () {
   clearInterval(drawLoop);
@@ -47,10 +51,10 @@ let directionButtons = document.querySelectorAll(".direction-button");
 document.body.addEventListener("keydown", function (event) {
   if (play) {
     cellElements[current.r * ncols + current.c].innerHTML = ``;
-    if (event.key === "ArrowUp") upArrowPressed();
-    if (event.key === "ArrowLeft") leftArrowPressed();
-    if (event.key === "ArrowRight") rightArrowPressed();
-    if (event.key === "ArrowDown") downArrowPressed();
+    if (event.key === "ArrowUp" || event.keyCode === 87) upArrowPressed();
+    if (event.key === "ArrowLeft" || event.keyCode === 65) leftArrowPressed();
+    if (event.key === "ArrowRight" || event.keyCode === 68) rightArrowPressed();
+    if (event.key === "ArrowDown" || event.keyCode === 83) downArrowPressed();
     cellElements[current.r * ncols + current.c].innerHTML = hackee;
     checkWin();
   }
@@ -64,28 +68,29 @@ function checkWin() {
     displayNext();
   }
 }
+
 function upArrowPressed() {
   moveSound.play();
   if (!current.walls[0]) current = grid[(current.r - 1) * ncols + current.c];
-  directionButtons[0].classList.add("highlight");
+  else wallCrash.play();
 }
+
 function leftArrowPressed() {
   moveSound.play();
-
   if (!current.walls[3]) current = grid[current.r * ncols + (current.c - 1)];
-  directionButtons[1].classList.add("highlight");
+  else wallCrash.play();
 }
+
 function rightArrowPressed() {
   moveSound.play();
-
   if (!current.walls[1]) current = grid[current.r * ncols + (current.c + 1)];
-  directionButtons[2].classList.add("highlight");
+  else wallCrash.play();
 }
+
 function downArrowPressed() {
   moveSound.play();
-
   if (!current.walls[2]) current = grid[(current.r + 1) * ncols + current.c];
-  directionButtons[3].classList.add("highlight");
+  else wallCrash.play();
 }
 
 function victoryMessage() {

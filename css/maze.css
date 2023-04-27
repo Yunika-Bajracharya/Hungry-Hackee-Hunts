@@ -135,11 +135,11 @@ body {
   display: none;
   position: absolute;
   background-color: rgb(248, 253, 187);
-  color:#035f50;
+  color: #035f50;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  min-width: 360px;
+  min-width: 440px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   left: -2px;
