@@ -10,6 +10,13 @@
       integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
       crossorigin="anonymous"
     />
+    <!--  HowlerJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+      integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="css/sorting.css" />
     <title>Sorting Visualizer</title>
   </head>
@@ -42,29 +49,37 @@
       </div>
 
       <div class="nav-item dropdown">
-        <i class="fas fa-lightbulb" style="color: rgb(241, 172, 44)"></i> 
+        <i class="fas fa-lightbulb" style="color: rgb(241, 172, 44)"></i>
         Hint to help Hackee get the Walnuts
         <span class="nav-info dropdown-content hint" style="top: 25px">
-        <i class="fas fa-arrow-up" style="color: green"></i>
-        Use arrow-up key to make Hackee jump 
-        <br> <span style="color: green;"> &nbsp; &nbsp; Blocks must be sorted first! </span></span>
+          <i class="fas fa-arrow-up" style="color: green"></i>
+          Use arrow-up key to make Hackee jump
+          <br />
+          <span style="color: green">
+            &nbsp; &nbsp; Blocks must be sorted first!
+          </span></span
+        >
       </div>
-
     </div>
 
     <div class="container">
       <div class="nav-item info arrayInput">
         Speed:
-        <input id="speed" type="range" min=1 max=5 step=1 value=4>
-    </div>
+        <input id="speed" type="range" min="1" max="5" step="1" value="4" />
+      </div>
       <div id="array"></div>
       <div id="count"></div>
       <br />
       <h2 class="range" style="text-align: center"></h2>
 
       <div class="tree">
-        <img src="img/tree.png" alt="" width="430px
-        " height="512px" />
+        <img
+          src="img/tree.png"
+          alt=""
+          width="430px
+        "
+          height="512px"
+        />
       </div>
       <div class="game">
         <img src="img/hackee-sideview.png" class="character" />

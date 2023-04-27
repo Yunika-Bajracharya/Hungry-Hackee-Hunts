@@ -1,3 +1,11 @@
+var moveSound = new Howl({
+  src: "/sfx/move.mp3",
+});
+
+var tada = new Howl({
+  src: "/sfx/tada.mp3",
+});
+
 let btn = document.querySelector(".generate-maze");
 btn.addEventListener("click", function () {
   clearInterval(drawLoop);
@@ -57,23 +65,31 @@ function checkWin() {
   }
 }
 function upArrowPressed() {
+  moveSound.play();
   if (!current.walls[0]) current = grid[(current.r - 1) * ncols + current.c];
   directionButtons[0].classList.add("highlight");
 }
 function leftArrowPressed() {
+  moveSound.play();
+
   if (!current.walls[3]) current = grid[current.r * ncols + (current.c - 1)];
   directionButtons[1].classList.add("highlight");
 }
 function rightArrowPressed() {
+  moveSound.play();
+
   if (!current.walls[1]) current = grid[current.r * ncols + (current.c + 1)];
   directionButtons[2].classList.add("highlight");
 }
 function downArrowPressed() {
+  moveSound.play();
+
   if (!current.walls[2]) current = grid[(current.r + 1) * ncols + current.c];
   directionButtons[3].classList.add("highlight");
 }
 
 function victoryMessage() {
+  tada.play();
   popUps = [];
   for (let i = 0; i < 10; i++) {
     const popUp = document.createElement("span");
